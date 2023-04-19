@@ -5,9 +5,17 @@ export const generateRandomBetween = (
 ): number => {
   const rndNum = Math.floor(Math.random() * (max - min)) + min;
 
+  if (min === max && min === exclude) {
+    return exclude;
+  }
+
+  if (min > max) {
+    return 0;
+  }
+
   if (rndNum === exclude) {
     return generateRandomBetween(min, max, exclude);
-  } else {
-    return rndNum;
   }
+
+  return rndNum;
 };
