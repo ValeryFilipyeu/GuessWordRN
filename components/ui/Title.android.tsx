@@ -1,7 +1,11 @@
 import React from "react";
-import { Text, StyleSheet } from "react-native";
+import {
+  Text,
+  StyleSheet,
+  // Platform
+} from "react-native";
 
-import Colors from "../../constants/colors";
+// import Colors from "../../constants/colors";
 
 type TitleProps = {
   children: React.ReactNode;
@@ -17,10 +21,14 @@ const styles = StyleSheet.create({
   title: {
     fontFamily: "open-sans-bold",
     fontSize: 24,
-    color: Colors.white,
+    color: "white",
     textAlign: "center",
+    // borderWidth: Platform.OS === 'android' ? 2 : 0,
+    // borderWidth: Platform.select({ ios: 0, android: 2 }),
     borderWidth: 2,
-    borderColor: Colors.white,
+    borderColor: "white",
     padding: 12,
+    maxWidth: "80%",
+    width: 300,
   },
 });
